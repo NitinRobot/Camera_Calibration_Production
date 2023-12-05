@@ -6,6 +6,7 @@
 
 ## 2. Deploy on Camera
 - Create a **virtual environment** and install the above packages via pip using the requirements.txt file
+- *pip install -r requirements.txt*
 
 ## 3.Packages to install in the virtual environment
 pip - pip install pyrealsense2
