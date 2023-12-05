@@ -5,7 +5,7 @@
 - python link -sudo apt install python-is-python3
 
 ## 2. Deploy on Camera
-- Create a **virtual environment** and install the above packages via pip
+- Create a **virtual environment** and install the above packages via pip using the requirements.txt file
 
 ## 3.Packages to install in the virtual environment
 pip - pip install pyrealsense2
@@ -22,4 +22,3 @@ pip install opencv-python
 ## 5.
 - Run the camera.py file to compute and save the intrinsic and extrinsic parameters.
  
-/home/fiddlehead/Desktop/DeployOnCamera-main
