@@ -21,5 +21,5 @@ pip install opencv-python
 - CaptureImagesForMerge.py - 1 image
 
 ## 5.
-- Run the camera.py file to compute and save the intrinsic and extrinsic parameters.
+- Run the myCameraCalibrationInfo.py file to compute and save the intrinsic and extrinsic parameters.
  
