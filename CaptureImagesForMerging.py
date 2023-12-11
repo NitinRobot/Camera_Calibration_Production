@@ -24,7 +24,7 @@ def getMergeFolderName():
     # We append the computer name to the Merge folder
     hostName = socket.gethostname()
     MergeImageDir = hostName + 'MergeImgs'
-    return MergeImageDir
+    return MergeImageDir, hostName 
 
 
 def mergeDirCheck(MergeImageDir):
@@ -46,7 +46,7 @@ def saveToJSON(fname,fnameInfo,myString):
             json.dump(myConfig, f, ensure_ascii=False, indent=4)
             print(myString +" info written to file.\n")
 
-def captureImgs(distImageDir):
+def captureImgs(distImageDir, hostName):
 
     counter = 0
 
@@ -102,7 +102,7 @@ def captureImgs(distImageDir):
                 print("Quitting program for image capture.\n")
                 break
             elif key == ord('c'): # capture
-                cv2.imwrite(distImageDir + "/Merge_" + str(counter) + ".png", color_image)
+                cv2.imwrite(distImageDir + "/Merge_" + hostName + str(counter) + ".png", color_image)
                 counter = counter + 1
                 print("Writing color image " + str(counter) + " to dir:" + distImageDir)
 
@@ -115,7 +115,7 @@ def captureImgs(distImageDir):
 
 if __name__ == '__main__':
     
-    mergeImageDir = getMergeFolderName()
+    mergeImageDir, hostName = getMergeFolderName()
     saveToJSON('merge','mergeInfo',mergeImageDir)
     mergeDirCheck(mergeImageDir)
-    captureImgs(mergeImageDir)
+    captureImgs(mergeImageDir, hostName)
