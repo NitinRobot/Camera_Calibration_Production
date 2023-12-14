@@ -1,0 +1,17 @@
+{
+    "Translation Vector X": 41.85352254310942,
+    "Translation Vector Y": 0.44892224258516067,
+    "Translation Vector Z": 1082.128906797857,
+    "Rotation Matrix [0,0]": 0.9999641040667431,
+    "Rotation Matrix [0,1]": -0.0038430411466930867,
+    "Rotation Matrix [0,2]": 0.007551265638336942,
+    "Rotation Matrix [1,0]": 0.003748135174265689,
+    "Rotation Matrix [1,1]": 0.9999143157843655,
+    "Rotation Matrix [1,2]": 0.01254243087282536,
+    "Rotation Matrix [2,0]": -0.0075988196919874774,
+    "Rotation Matrix [2,1]": -0.012513677486214608,
+    "Rotation Matrix [2,2]": 0.9998928271645215,
+    "Acquisition Time": "11:36AM on December 08, 2023",
+    "Camera info:": "Intel RealSense D415",
+    "Camera Serial Number:": "217222064860"
+}

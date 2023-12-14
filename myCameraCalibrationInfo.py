@@ -42,6 +42,9 @@ cameraInfo = myCamera.getCameraInfo()
 print(cameraInfo)
 myImages = myCamera.loadImagesForCalib()
 ret_val, camMat, distortion,rotVec,transVec  =myCamera.calibrateCamera(myImages,rows,columns,scale)
+
+print("Distortion", distortion)
+
 mean_error = myCamera.computeReprojError(rotVec,transVec,camMat,distortion)
 myCamera.intrinsicToJSON(camMat,mean_error,cameraInfo[0],cameraInfo[1], 'intrinsic')
 newCamMatrix = myCamera.undistortImg(camMat,distortion, ImageForDistortion, 'Distortion_0.png')
