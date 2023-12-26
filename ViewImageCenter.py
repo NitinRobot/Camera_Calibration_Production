@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 
 import pyrealsense2 as rs
 import numpy as np

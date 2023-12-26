@@ -239,6 +239,25 @@ class Camera:
         print("Extrinsic info written to file.")
 
 
+        # Save extrinsic parameters to JSON file
+    def distortionToJSON(self,distortion,device_info,serial_number):
+        distortion_json = {
+        "Dist 0"  : distortion[0][0],
+        "Dist 1"  : distortion[0][1],
+        "Dist 2"  : distortion[0][2],
+        "Dist 3"  : distortion[0][3],
+        "Dist 4"  : distortion[0][4],
+        "Acquisition Time":datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y"),
+        "Camera info:" :device_info,
+        "Camera Serial Number:" :serial_number,
+        }
+
+        # Write data to file
+        with open('distortion_info.json', 'w', encoding='utf-8') as f:
+            json.dump(distortion_json, f, ensure_ascii=False, indent=4)
+        print("Distortion info written to file.")
+
+
 # f = open('calibration.json')
 # data = json.load(f)
 # ImagesForCalibration = data['calibrationInfo']
