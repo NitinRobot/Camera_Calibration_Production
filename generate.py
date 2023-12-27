@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import cv2 as cv
 from cv2 import aruco
 
@@ -12,4 +14,5 @@ for id in range(20):  # genereting 20 markers
     # using funtion to draw a marker
     marker_image = aruco.generateImageMarker(marker_dict, id, MARKER_SIZE)
     cv.imshow("img", marker_image)
-    cv.imwrite(f"markers/marker_{id}.png", marker_image)
+    cv.waitKey(1000)
+    #cv.imwrite(f"markers/marker_{id}.png", marker_image)

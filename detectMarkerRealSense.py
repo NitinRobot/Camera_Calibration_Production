@@ -192,7 +192,8 @@ def captureImgs(markerDir, hostName):
 
 if __name__ == '__main__':
     
-    with open('intrinsic_no_distortion.json') as f:
+    #with open('intrinsic_no_distortion.json') as f:
+    with open('intrinsic.json') as f:
         camera_parameters = json.load(f)
     print(camera_parameters)
 
@@ -200,7 +201,7 @@ if __name__ == '__main__':
                        [0, camera_parameters["focal length Y"], camera_parameters["optical center Y"]], 
                        [0, 0, 1]])
 
-    MARKER_SIZE = 105  #mm
+    MARKER_SIZE = 120 #105  #mm
 
     with open('distortion_info.json') as f:
          distCoeffs = json.load(f)

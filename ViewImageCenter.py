@@ -56,7 +56,7 @@ def captureImgs():
 
             # Draw a circle at the center of the image
             cv2.circle(color_image, (640,360), 5, (0,128,0), -1)
-            
+            cv2.rectangle(color_image, (640-100, 360-100), (640+100, 360+100), (0,128,0), 2)
             cv2.imshow('RealSense Live Capture',color_image)
 
             key = cv2.waitKey(1)
