@@ -175,7 +175,7 @@ def captureImgs(markerDir, hostName):
             
                    print("Frame Capture: " + str(counter))
                    counter = counter + 1
-                   
+
             cv2.imshow('RealSense Live Capture',color_image)
             key = cv2.waitKey(100)
 
@@ -221,7 +221,11 @@ if __name__ == '__main__':
     dist_coef = np.array([[distCoeffs["Dist 0"], 
                   distCoeffs["Dist 1"], 
                   distCoeffs["Dist 2"], 
-                  distCoeffs["Dist 3"]]])
+                  distCoeffs["Dist 3"],
+                  distCoeffs["Dist 4"]]
+                  ])
+    
+    print(dist_coef)
 
     arucoMarkerDir, hostName = getMarkersFolderName()
     markerDirCheck(arucoMarkerDir)  
