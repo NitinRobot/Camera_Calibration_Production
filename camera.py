@@ -191,7 +191,7 @@ class Camera:
         # fontScale
         fontScale = 1
         # Blue color in BGR
-        color = (255, 0, 0)  
+        color = (255, 255, 255)  
         # Line thickness of 2 px
         thickness = 1
         # Using cv2.putText() method

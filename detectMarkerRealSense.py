@@ -151,7 +151,7 @@ def captureImgs(markerDir, hostName):
 
                    #rvecs in degrees
                    rvecs = np.degrees(rvecs)
-                   print("rvecs in degrees: \n", rvecs) 
+                   #print("rvecs in degrees: \n", rvecs) 
 
 
                     # rvecs to rotation matrix
@@ -162,15 +162,26 @@ def captureImgs(markerDir, hostName):
                    print("tvecs: \n", tvecs)
 
                    point = cv2.drawFrameAxes(color_image, cam_mat, dist_coef, rvecs[0], tvecs[0], 20, 4)
+
+                   font = cv2.FONT_HERSHEY_SIMPLEX
+                   # fontScale
+                   fontScale = 1
+
+                   color_image = cv2.putText(color_image, 'Z', (10,20), font, fontScale, (255, 0, 0), 1, cv2.LINE_AA)
+                   color_image = cv2.putText(color_image, 'Y', (10,50), font, fontScale, (0, 255, 0), 1, cv2.LINE_AA)
+                   color_image = cv2.putText(color_image, 'X', (10,80), font, fontScale, (0, 0, 255), 1, cv2.LINE_AA)
                    
             
+            
+                   print("Frame Capture: " + str(counter))
+                   counter = counter + 1
+                   
             cv2.imshow('RealSense Live Capture',color_image)
-
-            key = cv2.waitKey(0)
+            key = cv2.waitKey(100)
 
             if key == ord('q'): # quit
                 print("Quitting program for image capture.\n")
-                break
+                exit()
             elif key == ord('c'): # capture
                 cv2.imwrite(markerDir + "/ArucoMarker_" + hostName + str(counter) + ".png", color_image)
                 counter = counter + 1
@@ -201,7 +212,7 @@ if __name__ == '__main__':
                        [0, camera_parameters["focal length Y"], camera_parameters["optical center Y"]], 
                        [0, 0, 1]])
 
-    MARKER_SIZE = 120 #105  #mm
+    MARKER_SIZE =  210 #105  #mm
 
     with open('distortion_info.json') as f:
          distCoeffs = json.load(f)
